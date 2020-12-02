@@ -1,0 +1,61 @@
+<header class="container">
+  <div class="row">
+    <div class="col-sm">
+      <h1>Eat Da' Burger!!</h1>
+    </div>
+  </div>
+  <div class="row">
+      {{!-- <img src="../assets/images/insertPhotoHere.png" id="burger-img" /> --}}
+  </div>
+
+</header>
+<main class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <h2>These burgers are ready!</h2>
+      <ul>
+        {{#each burgers}}
+        {{#unless devoured}}
+        {{!-- This connects to the partials folder, specially burgers-block --}}
+        {{> burgers/burger-block devour=true}}
+        {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+    <div class="col-sm-6">
+      <h2>Send them back!</h2>
+      <ul>
+        {{#each burgers}}
+        {{#if devoured}}
+        {{!-- This connects to the partials folder, specially burgers-block --}}
+        {{> burgers/burger-block devour=false}}
+        {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>Add a Burger</h2>
+      <form class="create-form">
+
+        <div class="form-group">
+          <label for="ca">Burger Name:</label>
+          <input type="text" id="ca" name="burger_name">
+        </div>
+        
+
+        <div class="form-group">
+          <label for="slee">Have you ate it?</label><br>
+          <input type="radio" name="devoured" value="1"> You already ate this burger, sorry!<br>
+          <input type="radio" name="devoured" value="0"> Not yet!
+        </div>
+
+        <button type="submit">Add Burger</button>
+      </form>
+    </div>
+  </div>
+</main>
+<div>
+  <br>
+</div>
