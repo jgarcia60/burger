@@ -5,12 +5,12 @@ const connection = mysql.createConnection({
     port: 3306,
     user: "root",
     password: "Mickey19",
-    database: "burger_db"
+    database: "burgers_db"
 });
 
 connection.connect(function(err) {
     if (err) {
-        connsole.error("error connecting: " + err.stack);
+        console.error("error connecting: " + err.stack);
         return;
     }
     console.log("connected as id " + connection.threadId);

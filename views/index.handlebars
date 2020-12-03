@@ -5,7 +5,7 @@
     </div>
   </div>
   <div class="row">
-      {{!-- <img src="../assets/images/insertPhotoHere.png" id="burger-img" /> --}}
+      <img src="../assets/images/burger.jpg" id="burger-img" />
   </div>
 
 </header>
@@ -17,7 +17,14 @@
         {{#each burgers}}
         {{#unless devoured}}
         {{!-- This connects to the partials folder, specially burgers-block --}}
-        {{> burgers/burger-block devour=true}}
+        {{!-- {{> views/burger-block devour=true}} --}}
+        <li>
+            {{burger_name}}
+
+            <button class="change-devour" data-id="{{id}}" data-newdevour="{{devour}}">
+                {{#if devour}}EAT ME!{{else}}Boom.{{/if}}
+            </button>
+        </li>
         {{/unless}}
         {{/each}}
       </ul>
@@ -28,7 +35,14 @@
         {{#each burgers}}
         {{#if devoured}}
         {{!-- This connects to the partials folder, specially burgers-block --}}
-        {{> burgers/burger-block devour=false}}
+        {{!-- {{> views/burger-block devour=false}} --}}
+        <li>
+	        {{burger_name}}
+
+	        {{!-- <button class="change-devour" data-id="{{id}}" data-newdevour="{{devour}}">
+		        {{#if devour}}EAT ME!{{else}}Boom.{{/if}}
+	        </button> --}}
+        </li>
         {{/if}}
         {{/each}}
       </ul>
@@ -45,11 +59,11 @@
         </div>
         
 
-        <div class="form-group">
+        {{!-- <div class="form-group">
           <label for="slee">Have you ate it?</label><br>
           <input type="radio" name="devoured" value="1"> You already ate this burger, sorry!<br>
           <input type="radio" name="devoured" value="0"> Not yet!
-        </div>
+        </div> --}}
 
         <button type="submit">Add Burger</button>
       </form>

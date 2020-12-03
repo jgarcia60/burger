@@ -36,10 +36,12 @@ const orm = {
         connection.query(queryString, function(err, res) {
             if (err) throw err;
             console.log(res);
-            cb(result);
+            cb(res);
         });
     },
+    // insertOne: function(burger_name, cb) {
     insertOne: function(table, cols, vals, cb) {
+        // const queryString = "INSERT INTO burgers(burger_name, devoured) VALUES(?, false)";
         let queryString = "INSERT INTO " + table;
         queryString += " (";
         queryString += cols.toString();
@@ -48,25 +50,28 @@ const orm = {
         queryString += printQuestionMarks(vals.length);
         queryString += ") ";
         console.log(queryString);
-        connection.query(queryString, vals, (err, result) => {
+        // connection.query(queryString, vals, (err, res) => {
+        connection.query(queryString, vals, (err, res) => {
         if (err) {
             throw err;
         }
-        cb(result);
+        cb(res);
         });
     },
     updateOne: (table, objColVals, condition, cb) => {
+    // updateOne: (id, cb) => {
+        // const queryString = "UPDATE burgers SET devoured = true WHERE id = ?";
         let queryString = "UPDATE " + table;
         queryString += " SET ";
         queryString += objToSql(objColVals);
         queryString += " WHERE ";
         queryString += condition;
         console.log(queryString);
-        connection.query(queryString, (err, result) => {
+        connection.query(queryString, (err, res) => {
         if (err) {
             throw err;
         }
-        cb(result);
+        cb(res);
         });
     },
 }
