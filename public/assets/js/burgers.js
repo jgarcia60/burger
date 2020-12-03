@@ -1,6 +1,6 @@
 console.log("Hello world");
 
-$(function() {
+$(document).ready(function() {
     $(".change-devour").on("click", function(event) {
       const id = $(this).data("id");
       const newDevour = $(this).data("devoured");
