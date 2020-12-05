@@ -1,4 +1,27 @@
 body {
-    background-image: url("../images/burger-wallpaper.jpg");
-    background-size: cover;
+    background-color: rgb(206, 134, 1);
+}
+
+li {
+    padding: 5px;
+    margin: 5px;
+    background:rgb(221, 220, 220);
+}
+  
+.label {
+font-weight: bold;
+}
+  
+.create-update-form {
+padding: 5px;
+margin: 5px;
+background: aqua;
+}
+  
+.form-group {
+margin-bottom: 5px;
+}
+
+.container {
+background-color: rgb(220, 220, 220);
 }
