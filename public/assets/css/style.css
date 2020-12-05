@@ -1,12 +1,11 @@
 body {
-    background-image: URL('../images/burger-wallpaper.jpg');
-    background-size: cover;
+    background-color: rgb(206, 134, 1);
 }
 
 li {
     padding: 5px;
     margin: 5px;
-    /* background:rgb(221, 220, 220); */
+    background:rgb(221, 220, 220);
 }
   
 .label {
@@ -24,5 +23,5 @@ margin-bottom: 5px;
 }
 
 .container {
-background-color: rgb(240, 123, 13);
+background-color: rgb(220, 220, 220);
 }
